@@ -3,16 +3,15 @@
 void bubbleSort(int array[], size_t size)
 {
     int temp;
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size - 1; i++)
     {
-        for (int j = 0; j < size; j++)
+        for (int j = 0; j < size - 1 - i; j++)
         {
-            if (array[i] < array[j])
+            if (array[j] > array[j + 1])
             {
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-                // array[i], array[j] = array[j], array[i];  //? Not working
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
             }
         }
     }
